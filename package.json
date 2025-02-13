@@ -1,0 +1,20 @@
+{
+  "name": "i2.js",
+  "version": "1.0.6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "45 Degrees",
+  "license": "ISC",
+  "description": "IntelliStar 2 interactable library. Uses i2Exec to send commands.",
+  "repository": {
+    "type": "git",
+    "url": "https://git.team45.site/45-Degrees/i2.js.git"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
