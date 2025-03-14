@@ -128,7 +128,7 @@ async function handlePlaylist(flavor, duration, id, tag, delay, cancelInfo, star
  * console.log(command);  // Output will be the command output or `null` if there is an error.
  */
 async function loadRunPres(flavor, duration, id, tag) {
-    const command = `loadRunPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag!==null&&tag!==undefined) ? `,Tag=${tag}`:""})`
+    const command = `loadRunPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag != null) ? `,Tag=${tag}` : ""})`
     const loadRun = await exec(command)
     return loadRun;
 }
@@ -150,7 +150,7 @@ async function loadRunPres(flavor, duration, id, tag) {
  * console.log(command);  // Output will be the command output or `null` if there is an error.
  */
 async function loadPres(flavor, duration, id, tag) {
-    const command = `loadPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag!==null&&tag!==undefined) ? `,Tag=${tag}`:""})`
+    const command = `loadPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag != null) ? `,Tag=${tag}` : ""}")`
     const load = await exec(command)
     return load;
 }
