@@ -46,7 +46,7 @@ function formatStart(time) {
  * console.log(command);  // Output will be "Successfully handled playlist" or `null` if there is an error.
  */
 async function handlePlaylist(flavor, duration, id, tag, delay, cancelInfo, startInfo) {
-    const loadCommand = `loadPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag !== null&&tag !== undefined) ? `,Logo=${tag}` : ""}")`;
+    const loadCommand = `loadPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag !== null&&tag !== undefined&&tag!==0) ? `,Logo=${tag}` : ""}")`;
     let time = new Date();
     if (delay !== null) {
         time.setSeconds(time.getSeconds() + delay + 2);
@@ -128,7 +128,7 @@ async function handlePlaylist(flavor, duration, id, tag, delay, cancelInfo, star
  * console.log(command);  // Output will be the command output or `null` if there is an error.
  */
 async function loadRunPres(flavor, duration, id, tag) {
-    const command = `loadRunPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag != null) ? `,Logo=${tag}` : ""})`
+    const command = `loadRunPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag != null&&tag!==0) ? `,Logo=${tag}` : ""})`
     const loadRun = await exec(command)
     return loadRun;
 }
@@ -150,7 +150,7 @@ async function loadRunPres(flavor, duration, id, tag) {
  * console.log(command);  // Output will be the command output or `null` if there is an error.
  */
 async function loadPres(flavor, duration, id, tag) {
-    const command = `loadPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag != null) ? `,Logo=${tag}` : ""}")`
+    const command = `loadPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag != null&&tag!==0) ? `,Logo=${tag}` : ""}")`
     const load = await exec(command)
     return load;
 }
