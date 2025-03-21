@@ -30,7 +30,7 @@ async function i2exec(command) {
 
 function execPromise(command) {
     return new Promise((resolve, reject) => {
-        exec(command, (err, stdout, stderr) => {
+        exec(command, {windowsHide:true}, (err, stdout, stderr) => {
             if (err) {
                 reject(err);
             } else {
