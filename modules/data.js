@@ -44,7 +44,7 @@ async function storeData(filePath, priority) {
  */
 async function storeImage(filePath, priority, extension, issueTime, imageType, location) {
     try {
-        const dataStore = await exec(`store${priority == true ? "Priority" : ""}Image("File=${filePath},IssueTime=${issueTime},Location=${location},imageType=${imageType},FileExtension=${extension}")`)
+        const dataStore = await exec(`store${priority == true ? "Priority" : ""}Image("File=${filePath},IssueTime=${issueTime},Location=${location},ImageType=${imageType},FileExtension=${extension}")`)
         return true;
     } catch(err) {
         console.log("Error while storing i2 image: ", err)
