@@ -57,7 +57,7 @@ async function handlePlaylist(flavor, duration, id, tag, delay, cancelInfo, star
     const startCommands = [];
     if (cancelInfo !== null && cancelInfo !== undefined) {
         cancelInfo.forEach(c => {
-            const cancelTime = new Date(time.getTime() + delay * 1000);
+            const cancelTime = new Date(time.getTime() * 1000);
             cancelCommands.push(`cancelPres("PresentationId=${c.id},StartTime=${formatStart(cancelTime)}")`);
         });
     }
