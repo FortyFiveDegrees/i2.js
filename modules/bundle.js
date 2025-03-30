@@ -15,7 +15,7 @@ const exec = require("./exec");
  */
 async function send(filePath) {
     try {
-        const restart = await exec(`stageStarBundle(File=${filePath})`)
+        const restart = await exec(`stageStarBundle("File=${filePath}")`)
         return true;
     } catch(err) {
         console.log("Error while staging star bundle: ", err)
