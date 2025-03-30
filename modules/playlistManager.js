@@ -170,7 +170,7 @@ async function loadPres(flavor, duration, id, tag) {
  * console.log(command);  // Output will be the command output or `null` if there is an error.
  */
 async function runPres(id, startTime) {
-    const command = `runPres(PresentationId=${id}${(startTime !== null && startTime !== undefined) ? `,StartTime=${startTime}` :""})`
+    const command = `runPres("PresentationId=${id}${(startTime !== null && startTime !== undefined) ? `,StartTime=${startTime}` :""}")`
     const run = await exec(command)
     return run;
 }
@@ -190,7 +190,7 @@ async function runPres(id, startTime) {
  * console.log(command);  // Output will be the command output or `null` if there is an error.
  */
 async function cancelPres(id, startTime) {
-    const command = `cancelPres(PresentationId=${id}${(startTime !== null && startTime !== undefined) ? `,StartTime=${startTime}` :""})`
+    const command = `cancelPres("PresentationId=${id}${(startTime !== null && startTime !== undefined) ? `,StartTime=${startTime}` :""}")`
     const run = await exec(command)
     return run;
 }
