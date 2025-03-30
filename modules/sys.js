@@ -17,7 +17,7 @@ const path = require("path")
  */
 async function restartI2Service() {
     try {
-        const restart = await exec("restartI2Service(CommandId=poweredbyi2js)")
+        const restart = await exec("restartI2Service(\"CommandId=poweredbyi2js\")")
         return true;
     } catch(err) {
         console.log("Error while restarting i2 service: ", err)
@@ -40,7 +40,7 @@ async function restartI2Service() {
  */
 async function restartProcess(processName) {
     try {
-        const restart = await exec(`restartProcess(ProcessName=${processName})`)
+        const restart = await exec(`restartProcess("ProcessName=${processName}")`)
         return true;
     } catch(err) {
         console.log("Error while restarting i2 process: ", err)
@@ -60,7 +60,7 @@ async function restartProcess(processName) {
  * console.log(command);  // Output will be true or `null` if there is an error.
  * 
  */
-function getMPC(processName) {
+function getMPC() {
     try {
         const config = fs.readFileSync(path.join("C:/Program Files (x86)/TWC/i2/Managed/Config/MachineProductCfg.xml"))
         return config;
@@ -70,4 +70,4 @@ function getMPC(processName) {
     }
 }
 
-module.exports = {restartI2Service,restartProcess};
+module.exports = {restartI2Service,restartProcess,getMPC};
