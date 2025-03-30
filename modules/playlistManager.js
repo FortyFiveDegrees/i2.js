@@ -89,7 +89,7 @@ async function handlePlaylist(flavor, duration, id, tag, delay, cancelInfo, star
                         const run = await exec(c[1])
                     })
                 }, (duration / 30 - 10) * 1000);
-            }, 10000);
+            }, 5000);
         } else {
             await exec(runCommand);
 		setTimeout(async () => {
@@ -101,7 +101,7 @@ async function handlePlaylist(flavor, duration, id, tag, delay, cancelInfo, star
                     startCommands.forEach(async c => {
                         const load = await exec(c[1])
                     })
-                }, 10000);
+                }, 5000);
         }
 
         return "Successfully handled playlist.";
