@@ -17,7 +17,7 @@ const path = require("path")
  */
 async function restartI2Service() {
     try {
-        const restart = await exec("restartI2Service(\"CommandId=poweredbyi2js\")")
+        const restart = await exec("restartI2Service(\"r=1\")")
         return true;
     } catch(err) {
         console.log("Error while restarting i2 service: ", err)
@@ -71,3 +71,4 @@ function getMPC() {
 }
 
 module.exports = {restartI2Service,restartProcess,getMPC};
+
