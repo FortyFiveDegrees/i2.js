@@ -46,7 +46,7 @@ function formatStart(time) {
  * console.log(command);  // Output will be "Successfully handled playlist" or `null` if there is an error.
  */
 async function handlePlaylist(flavor, duration, id, tag, delay, cancelInfo, startInfo) {
-    const loadCommand = `loadPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag !== null&&tag !== undefined&&tag!==0) ? `,Logo=${tag}` : ""}")`;
+    const loadCommand = `loadPres("Flavor=${flavor},Duration=${duration},PresentationId=${id}${(tag !== null&&tag !== undefined&&tag!==0&&tag!=="0") ? `,Logo=${tag}` : ""}")`;
     let time = new Date();
     if (delay !== null) {
         time.setSeconds(time.getSeconds() + delay + 2);
@@ -196,3 +196,4 @@ async function cancelPres(id, startTime) {
 }
 
 module.exports = {handlePlaylist,loadRunPres,loadPres,runPres,cancelPres,formatStart};
+
